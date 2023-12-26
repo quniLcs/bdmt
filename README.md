@@ -19,18 +19,18 @@
 
 作用：
 
-- 管理HDFS的命名空间（NameSpace）
+- 管理 HDFS 的命名空间（NameSpace）
 - 管理数据块（Data Block）的映射信息
 - 配置副本放置策略
-  - 副本1：Client的节点上
+  - 副本1：Client 的节点上
   - 副本2：与副本1不同机架的节点上
   - 副本3：与副本2同一机架的不同节点上
   - 其它副本：随机挑选
 
-- 处理客户端（Client）读写请求
+- 处理 Client 的读写请求
 - 提供目录服务
 - 提供灾难恢复的主节点
-  - 为了提高效率，将元数据存放到内存里
+  - 为了提高效率，将元数据存放到内存中
   - 通过操作日志（Editlog）和定期的 Checkpoint 进行持久化
 
 
@@ -148,12 +148,12 @@
 
 作用：
 
+- 存储 Schema，包括有哪些表（Table），每个表有哪些列族（Column Family）
 - Master 与 Region Server 启动时会向 ZooKeeper 注册
 - 保证任何时候集群中只有一个 Master
 - 使得 Master 故障不再是单点故障
-- 实时监控 Region Server 的状态，将 Region server 的上线和下线信息实时通知给 Master
+- 实时监控 Region Server 的状态，将 Region Server 的上线和下线信息实时通知给 Master
 - 存储 Region 的寻址入口
-- 存储 Schema，包括有哪些表（Table），每个表有哪些列族（Column Family）
 
 ### 适用场景
 
